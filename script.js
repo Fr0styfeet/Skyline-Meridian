@@ -1,3 +1,37 @@
+let countdownTimer;
+let remainingMinutes = 10;
+let remainingSeconds = 0;
+
+const startCountdown = () => {
+    countdownTimer = setInterval(updateCountdown, 1000); // every second
+}
+const updateCountdown = () => {
+    const timeRemainingDisplay = document.getElementById('writtenTime');
+
+    if (remainingMinutes === 0 && remainingSeconds === 0) {
+        clearInterval(countdownTimer);
+        timeRemainingDisplay.innerHTML = 'Times up!';
+        timeRemainingDisplay.style.backgroundColor = 'red';
+        exit();
+        document.getElementById('enterbutt').disabled = true;
+        let done = document.getElementById('warn');
+        done.style.display = 'block';
+        done.innerHTML = 'You cannot enter now';
+    } else {
+        if (remainingSeconds === 0) {
+            remainingMinutes--;
+            remainingSeconds = 59;
+        } else {
+            remainingSeconds--;
+        }
+
+        const totalRemainingHours = 10;
+        const totalRemainingMinutes = remainingMinutes + Math.ceil(remainingSeconds / 60);
+
+        timeRemainingDisplay.innerHTML = `${totalRemainingMinutes} mins left <br> out of ${totalRemainingHours} minutes`;
+    }
+}
+startCountdown()
 
 // Door animation
 const doorAnimate=()=>{
@@ -47,8 +81,9 @@ const updateTimer =()=> {
 const exit=()=>{
     gsap.to('.box1',{duration:.5 , x:'0%'})
     gsap.to('.box2',{duration:.5 , x:'0%'})
+    gsap.to('#timer', {delay:.1,  opacity:'0' });
     gsap.to('#exitbutt', {delay:.1, opacity:'0' });
-    gsap.to('#timer', {delay:.1,position: 'absolute', top: '0', right: '0', opacity:'1'});
+    // gsap.to('#timer', {delay:.1,position: 'absolute', top: '0', right: '0', opacity:'1'});
     gsap.to('.circle',{delay:.7 , rotation: 360, opacity: 1 } )
    console.log("mfdoifjd")
 }
@@ -67,7 +102,6 @@ const submitForm=()=>{
     }
 }
 
+
 document.getElementById('exitbutt').addEventListener('click', exit);
-
-
 

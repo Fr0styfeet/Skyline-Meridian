@@ -32,7 +32,11 @@ body{
     width: 50%;
     border: 6px solid #529898;
     box-shadow: 0 0 10px black;
-   
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .circle {
@@ -103,14 +107,19 @@ body{
     height: auto;
     width: 12vw;
     font-size: xx-large;
-    background-color:  #C5ECEB ;
+    background-color:  #529898 ;
     padding: 15px;
     margin: 30vh;
     top: 0;
     right: 0;
     transform: translate(70%, 0);
 }
-
+#writtenTime{
+    color:#529898 ;
+    font-size: x-large;
+    margin-left: 25%;
+    margin-top: 100px;
+}
 #warn{
     margin-top: 5%;
     display: none;
@@ -120,4 +129,109 @@ body{
 
 .circle img{
     height: 10%;
+}
+
+.bat{
+    height: 140px;
+    width: 325px;
+    margin-left: 10%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transform: rotate(90deg);
+}
+
+.charge1,.charge2,.charge3,.charge4{
+    height: 130px;
+    width: 75px;
+    background-color: #529898;
+    position: relative;
+    opacity: 0;
+    border: 2px solid #529898;
+}
+
+.charge1 {
+    bottom: 45px;
+    left: 5px;
+    animation: charge-1 150s ;
+}
+
+@keyframes charge-1 {
+    0%, 25% {
+        opacity: 1;
+    }
+    37.5% {
+        opacity: 0.75; 
+    }
+    50%, 75% {
+        opacity: 0; 
+    }
+    100% {
+        opacity: 0; 
+    }
+}
+.charge1{
+    opacity: 0;
+}
+.charge2 {
+    bottom: 175px;
+    left: 85px;
+    animation: charge-2 300s ;
+}
+
+@keyframes charge-2 {
+    0%, 25% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.75; 
+    }
+    62.5%, 100% {
+        opacity: 0; 
+    }
+}
+.charge2{
+    opacity: 0;
+}
+
+.charge3 {
+    bottom: 305px;
+    left: 165px;
+    animation: charge-3 450s ;
+}
+
+@keyframes charge-3 {
+    0%, 25% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.75; 
+    }
+    75%, 100% {
+        opacity: 0; 
+    }
+}
+.charge3{
+    opacity: 0;
+}
+.charge4 {
+    bottom: 435px;
+    left: 245px;
+    animation: charge-4 600s ;
+}
+
+@keyframes charge-4 {
+    0%, 25% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.75; 
+    }
+    87.5%, 100% {
+        opacity: 0; 
+    }
+}
+.charge4{
+    opacity: 0;
 }
