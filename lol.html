@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Password Input Customization</title>
+  <style>
+    .fake-password-input {
+      position: relative;
+      display: inline-block;
+    }
+
+    .fake-password-input input {
+      font-family: 'Courier New', Courier, monospace; /* Optional: Use a monospaced font */
+      letter-spacing: 4px; /* Optional: Adjust letter spacing to align characters */
+      color: transparent;
+      caret-color: black; /* Optional: Set the caret color to match text color */
+    }
+
+    .fake-password-display {
+      position: absolute;
+      top: 0;
+      left: 0;
+      pointer-events: none; /* Make sure the fake display doesn't interfere with input */
+    }
+  </style>
+</head>
+<body>
+  <div class="fake-password-input">
+    <input type="password" id="realPasswordInput">
+    <div class="fake-password-display" id="fakePasswordDisplay"></div>
+  </div>
+
+  <script>
+    const realPasswordInput = document.getElementById('realPasswordInput');
+    const fakePasswordDisplay = document.getElementById('fakePasswordDisplay');
+
+    realPasswordInput.addEventListener('input', updateFakeDisplay);
+
+    function updateFakeDisplay() {
+      fakePasswordDisplay.textContent = realPasswordInput.value.replace(/./g, '*');
+    }
+  </script>
+</body>
+</html>
