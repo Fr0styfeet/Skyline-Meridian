@@ -28,7 +28,7 @@ const updateCountdown = () => {
         const totalRemainingHours = 10;
         const totalRemainingMinutes = remainingMinutes + Math.ceil(remainingSeconds / 60);
 
-        timeRemainingDisplay.innerHTML = `${totalRemainingMinutes} mins left <br> out of ${totalRemainingHours} minutes`;
+        timeRemainingDisplay.innerHTML = `${totalRemainingMinutes} mins left`;
     }
 }
 startCountdown()

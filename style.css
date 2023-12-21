@@ -116,9 +116,10 @@ body{
 }
 #writtenTime{
     color:#529898 ;
-    font-size: x-large;
-    margin-left: 25%;
-    margin-top: 100px;
+    font-size: xx-large;
+    margin-left: 22%;
+    font-weight: bold;
+    margin-top: 101px;
 }
 #warn{
     margin-top: 5%;
@@ -140,6 +141,7 @@ body{
     top: 0;
     bottom: 0;
     transform: rotate(90deg);
+
 }
 
 .charge1,.charge2,.charge3,.charge4{
@@ -165,10 +167,12 @@ body{
         opacity: 0.75; 
     }
     50%, 75% {
-        opacity: 0; 
+    border: 2px solid #529898;
+    opacity: 0; 
     }
     100% {
-        opacity: 0; 
+    border: 2px solid #529898;
+    opacity: 0; 
     }
 }
 .charge1{
@@ -188,7 +192,8 @@ body{
         opacity: 0.75; 
     }
     62.5%, 100% {
-        opacity: 0; 
+    border: 2px solid #529898;
+    opacity: 0; 
     }
 }
 .charge2{
@@ -209,7 +214,8 @@ body{
         opacity: 0.75; 
     }
     75%, 100% {
-        opacity: 0; 
+    border: 2px solid #529898;
+    opacity: 0; 
     }
 }
 .charge3{
@@ -229,7 +235,8 @@ body{
         opacity: 0.75; 
     }
     87.5%, 100% {
-        opacity: 0; 
+    border: 2px solid #529898;
+    opacity: 0; 
     }
 }
 .charge4{
