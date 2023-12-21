@@ -58,7 +58,7 @@ const submitForm=()=>{
     console.log("success")
     event.preventDefault();
     var pass= document.getElementById('password').value;
-    if (pass=="ani") {
+    if (pass=="sky") {
         doorAnimate();
         startTimer();
     }
