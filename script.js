@@ -1,19 +1,20 @@
 
+// Door animation
 const doorAnimate=()=>{
     gsap.to('.circle',{duration:1 , rotation: 360, opacity: 0 } )
     gsap.to('.box1',{duration:2 , x:'-100%'})
     gsap.to('.box2',{duration:2 , x:'100%'})
     gsap.to('#timer', {delay:2,  opacity:'1' });
     gsap.to('#exitbutt', {delay:2, opacity:'1' });
-
 }
 
 let timer;
-let minutes = 0;
-let seconds = 10;
+let minutes = 10;
+let seconds = 2;
+
 
 const startTimer=()=>{
-    timer = setInterval(updateTimer, 1000);
+    timer = setInterval(updateTimer, 1000);   // every second
 }
 
 const updateTimer =()=> {
